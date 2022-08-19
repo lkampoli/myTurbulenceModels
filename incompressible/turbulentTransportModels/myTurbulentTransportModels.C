@@ -62,10 +62,15 @@ namespace Foam {
     makeTemplatedTurbulenceModel                                               \
     (transportModelIncompressibleTurbulenceModel, LES, Type)
 
-
 // -------------------------------------------------------------------------- //
 // RAS models
 // -------------------------------------------------------------------------- //
+
+#include "kOmegaSST_BOR_frozen_R.H"
+makeRASModel(kOmegaSST_BOR_frozen_R);
+
+#include "kOmegaSST_BOR_InDaLoop_R.H"
+makeRASModel(kOmegaSST_BOR_InDaLoop_R);
 
 // #include "mykOmegaSST.H"
 // makeRASModel(mykOmegaSST);
@@ -73,8 +78,8 @@ namespace Foam {
 #include "EARSM.H"
 makeRASModel(EARSM);
 
-#include "gammaSST.H"
-makeRASModel(gammaSST);
+//#include "gammaSST.H"
+//makeRASModel(gammaSST);
 
 #include "kOmegaSSTCC.H"
 makeRASModel(kOmegaSSTCC);

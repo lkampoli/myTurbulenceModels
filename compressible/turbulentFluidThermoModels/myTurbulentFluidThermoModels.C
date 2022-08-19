@@ -66,13 +66,12 @@ namespace Foam {
     makeTemplatedTurbulenceModel                                               \
     (fluidThermoCompressibleTurbulenceModel, LES, Type)
 
-
 // -------------------------------------------------------------------------- //
 // RAS models
 // -------------------------------------------------------------------------- //
 
-#include "gammaSST.H"
-makeRASModel(gammaSST);
+//#include "gammaSST.H"
+//makeRASModel(gammaSST);
 
 #include "kOmegaSSTCC.H"
 makeRASModel(kOmegaSSTCC);
@@ -118,6 +117,5 @@ makeRASModel(mykkLOmegaFS);
 
 #include "XLES.H"
 makeLESModel(XLES);
-
 
 // ************************************************************************* //

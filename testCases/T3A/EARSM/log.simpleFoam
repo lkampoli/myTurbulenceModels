@@ -1,0 +1,131 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7
+Exec   : simpleFoam -parallel
+Date   : Aug 19 2022
+Time   : 09:20:02
+Host   : "6300l-146216-l.mobility.unimelb.net.au"
+PID    : 13596
+I/O    : uncollated
+Case   : /home/unimelb.edu.au/lcampoli/CFD/myTurbulenceModels/testCases/T3A/EARSM
+nProcs : 2
+Slaves : 1("6300l-146216-l.mobility.unimelb.net.au.13597")
+Pstream initialized with:
+    floatTransfer      : 0
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+--> FOAM Warning : 
+    From function void* Foam::dlOpen(const Foam::fileName&, bool)
+    in file POSIX.C at line 1251
+    dlopen error : libmyIncompressibleTurbulenceModels.so: cannot open shared object file: No such file or directory
+--> FOAM Warning : 
+    From function bool Foam::dlLibraryTable::open(const Foam::fileName&, bool)
+    in file db/dynamicLibrary/dlLibraryTable/dlLibraryTable.C at line 105
+    could not load "libmyIncompressibleTurbulenceModels.so"
+Create mesh for time = 0
+
+
+SIMPLE: No convergence criteria found
+
+Reading field p
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+Selecting incompressible transport model Newtonian
+Selecting turbulence model type RAS
+Selecting RAS turbulence model EARSM
+[0] 
+[0] 
+[0] --> FOAM FATAL ERROR: 
+[0] Unknown RASModel type EARSM
+
+Valid RASModel types:
+
+18
+(
+LRR
+LamBremhorstKE
+LaunderSharmaKE
+LienCubicKE
+LienLeschziner
+RNGkEpsilon
+SSG
+ShihQuadraticKE
+SpalartAllmaras
+kEpsilon
+kOmega
+kOmegaSST
+kOmegaSSTLM
+kOmegaSSTSAS
+kkLOmega
+qZeta
+realizableKE
+v2f
+)
+[0] 
+[0] 
+[0]     From function static Foam::autoPtr<Foam::RASModel<BasicTurbulenceModel> > Foam::RASModel<BasicTurbulenceModel>::New(const alphaField&, const rhoField&, const volVectorField&, const surfaceScalarField&, const surfaceScalarField&, const transportModel&, const Foam::word&) [with BasicTurbulenceModel = Foam::IncompressibleTurbulenceModel<Foam::transportModel>; Foam::RASModel<BasicTurbulenceModel>::alphaField = Foam::geometricOneField; Foam::RASModel<BasicTurbulenceModel>::rhoField = Foam::geometricOneField; Foam::volVectorField = Foam::GeometricField<Foam::Vector<double>, Foam::fvPatchField, Foam::volMesh>; Foam::surfaceScalarField = Foam::GeometricField<double, Foam::fvsPatchField, Foam::surfaceMesh>; Foam::RASModel<BasicTurbulenceModel>::transportModel = Foam::transportModel]
+[0]     in file ../turbulenceModels/lnInclude/RASModel.C at line 151.
+[0] 
+FOAM parallel run exiting
+[0] 
+[1] 
+[1] 
+[1] --> FOAM FATAL ERROR: 
+[1] Unknown RASModel type EARSM
+
+Valid RASModel types:
+
+18
+(
+LRR
+LamBremhorstKE
+LaunderSharmaKE
+LienCubicKE
+LienLeschziner
+RNGkEpsilon
+SSG
+ShihQuadraticKE
+SpalartAllmaras
+kEpsilon
+kOmega
+kOmegaSST
+kOmegaSSTLM
+kOmegaSSTSAS
+kkLOmega
+qZeta
+realizableKE
+v2f
+)
+[1] 
+[1] 
+[1]     From function static Foam::autoPtr<Foam::RASModel<BasicTurbulenceModel> > Foam::RASModel<BasicTurbulenceModel>::New(const alphaField&, const rhoField&, const volVectorField&, const surfaceScalarField&, const surfaceScalarField&, const transportModel&, const Foam::word&) [with BasicTurbulenceModel = Foam::IncompressibleTurbulenceModel<Foam::transportModel>; Foam::RASModel<BasicTurbulenceModel>::alphaField = Foam::geometricOneField; Foam::RASModel<BasicTurbulenceModel>::rhoField = Foam::geometricOneField; Foam::volVectorField = Foam::GeometricField<Foam::Vector<double>, Foam::fvPatchField, Foam::volMesh>; Foam::surfaceScalarField = Foam::GeometricField<double, Foam::fvsPatchField, Foam::surfaceMesh>; Foam::RASModel<BasicTurbulenceModel>::transportModel = Foam::transportModel]
+[1]     in file ../turbulenceModels/lnInclude/RASModel.C at line 151.
+[1] 
+FOAM parallel run exiting
+[1] 
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 1 in communicator MPI COMMUNICATOR 3 SPLIT FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+[6300l-146216-l.mobility.unimelb.net.au:13591] 1 more process has sent help message help-mpi-api.txt / mpi-abort
+[6300l-146216-l.mobility.unimelb.net.au:13591] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages

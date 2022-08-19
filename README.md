@@ -40,6 +40,5 @@ There are some test cases in **testCases** directory.
 
 ## Documentation
 
-For current doccumentation see please 
+For current documentation see please 
 [wiki pages](https://github.com/furstj/myTurbulenceModels/wiki/User-guide).
-
