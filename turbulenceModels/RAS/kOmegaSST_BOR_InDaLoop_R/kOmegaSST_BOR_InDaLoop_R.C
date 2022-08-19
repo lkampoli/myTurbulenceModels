@@ -731,6 +731,9 @@ void kOmegaSST_BOR_InDaLoop_R<BasicTurbulenceModel>::correct()
         bound(omega_, this->omegaMin_);
     }
 
+    volScalarField maggy(mag(alpha()*rho()*Rterm));
+    Info << "maggy: " << maggy << endl;
+
     // Turbulent kinetic energy equation
     tmp<fvScalarMatrix> kEqn
     (
@@ -739,6 +742,7 @@ void kOmegaSST_BOR_InDaLoop_R<BasicTurbulenceModel>::correct()
       - fvm::laplacian(alpha*rho*DkEff(F1), k_)
      ==
         alpha()*rho()*Pk(G)
+      + maggy	
 //      + mag(alpha()*rho()*Rterm)
       - fvm::SuSp((2.0/3.0)*alpha()*rho()*divU, k_)
       - fvm::Sp(alpha()*rho()*epsilonByk(F1, F23), k_)
